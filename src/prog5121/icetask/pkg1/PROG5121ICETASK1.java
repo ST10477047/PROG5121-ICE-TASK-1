@@ -5,13 +5,21 @@ class Order {
     String item;
     int quantity;
     double price;
+    final double VAT_RATE = 0.15;
+    
+    public Order(String Item, int quantity, double price) {
+        this.item= item;
+        this.quantity = quantity;
+        this.price = price;
+        
+    }
     
     public double getSubtotal(){
         return quantity * price;
     }
     
     public double getVAT(){
-        return getSubtotal() * 0.15;
+        return getSubtotal() * VAT_RATE;
     }
     
     public double getTotal() {
@@ -26,11 +34,11 @@ class Order {
         String name = JOptionPane.showInputDialog("Enter customer name:");
         String studentNumber = JOptionPane.showInputDialog("Enter student number:");
         
-        Order order = new Order();
+        String item = JOptionPane.showInputDialog("Enter item ordered:");
+        int quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter quantity"));
+        double price = Double.parseDouble(JOptionPane.showInputDialog("Enter price per item"));
         
-        order.item = JOptionPane.showInputDialog("Enter item ordered:");
-        order.quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter quantity"));
-        order.price = Double.parseDouble(JOptionPane.showInputDialog("Enter price per item"));
+        Order order = new Order(item, quantity, price);
         
         String receipt = "---- CAMPUS QUICKSERVE----\n"
                 +"Customer: " + name + "\n"

@@ -31,9 +31,21 @@ class Order {
         order.item = JOptionPane.showInputDialog("Enter item ordered:");
         order.quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter quantity"));
         order.price = Double.parseDouble(JOptionPane.showInputDialog("Enter price per item"));
-        System.out.println("subtotal: " + order.getSubtotal());
-        System.out.println("VAT:" + order.getVAT());
-        System.out.println("Total: " + order.getTotal());
+        
+        String receipt = "---- CAMPUS QUICKSERVE----\n"
+                +"Customer: " + name + "\n"
+                +"Student Number: " + studentNumber + "\n\n"
+                +"Item Ordered: " + order.item + "\n"
+                +"Quantity: " + order.quantity + "\n"
+                +"Price per Item: R" +String.format("%.2f", order.price) + "\n\n"
+                +"Subtotal: R" + String.format("%.2f", order.getSubtotal()) + "\n"
+                + "VAT (15%): R" + String.format("%.2f", order.getVAT()) + "\n"
+                + "Total: R" + String.format("%.2f", order.getTotal()) + "\n\n"
+                + "Thank you for your order!\n"
+                + "------------------------------";
+                
+        System.out.println(receipt);
+        JOptionPane.showMessageDialog(null, receipt);
     }
     
 }

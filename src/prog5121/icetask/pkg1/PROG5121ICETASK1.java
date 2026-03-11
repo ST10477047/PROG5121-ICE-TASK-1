@@ -1,14 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package prog5121.icetask.pkg1;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author deanb
- */
-public class PROG5121ICETASK1 {
+class Order {
+    String item;
+    int quantity;
+    double price;
+}
+
+ class PROG5121ICETASK1 {
+     
    
     public static void main(String[] args) {
         

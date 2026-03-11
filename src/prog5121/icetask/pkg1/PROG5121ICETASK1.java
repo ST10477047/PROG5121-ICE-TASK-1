@@ -7,12 +7,19 @@ class Order {
     double price;
 }
 
- class PROG5121ICETASK1 {
+ public class PROG5121ICETASK1 {
      
-   
     public static void main(String[] args) {
         
-        System.out.println("Campus Quick Serve Ordering App");
+        String name = JOptionPane.showInputDialog("Enter customer name:");
+        String studentNumber = JOptionPane.showInputDialog("Enter student number:");
+        
+        Order order = new Order();
+        
+        order.item = JOptionPane.showInputDialog("Enter item ordered:");
+        order.quantity = Integer.parseInt(JOptionPane.showInputDialog("Enter quantity"));
+        order.price = Double.parseDouble(JOptionPane.showInputDialog("Enter price per item"));
+        System.out.println("Order noted");
       
     }
     
